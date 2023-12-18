@@ -4,6 +4,14 @@ import { useState, useEffect } from "react";
 const App = () => {
   const [name, setName] = useState("friend");
   const [personType, setPersonType] = useState("lovely");
+  /*First run of useEffect is guaranteed no matter
+  if there is anything in dependency array or what
+  is in it. No dependency array means it will run
+  everytime there is a re-render (state is changed)
+  which is not ideal*/
+  useEffect(() => {
+    console.log("hello")
+  })
 
   const reactions = {
     morning: "Awesome! ☀️",
