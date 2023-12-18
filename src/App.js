@@ -9,9 +9,15 @@ const App = () => {
   is in it. No dependency array means it will run
   everytime there is a re-render (state is changed)
   which is not ideal*/
-  useEffect(() => {
+  /*useEffect(() => {
     console.log("hello")
-  })
+  })*/
+
+  /*Add empty dependency array, console log statement
+  only applies once*/
+  useEffect(() => {
+    console.log("hello, again!")
+  }, [])
 
   const reactions = {
     morning: "Awesome! ☀️",
