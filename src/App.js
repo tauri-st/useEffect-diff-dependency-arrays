@@ -14,10 +14,17 @@ const App = () => {
   })*/
 
   /*2. Add empty dependency array, console log statement
-  only applies once*/
-  useEffect(() => {
+  only applies once at start*/
+  /*useEffect(() => {
     console.log("hello, again!")
-  }, [])
+  }, [])*/
+
+  /*3. Adding a specific state value means the
+  initial run + only when that state value is 
+  changed */
+  useEffect(() => {
+    console.log("hello, times three!")
+  }, [personType])
 
   const reactions = {
     morning: "Awesome! ☀️",
