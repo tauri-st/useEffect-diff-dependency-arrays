@@ -4,6 +4,27 @@ import { useState, useEffect } from "react";
 const App = () => {
   const [name, setName] = useState("friend");
   const [personType, setPersonType] = useState("lovely");
+  /*1. First run of useEffect is guaranteed no matter
+  if there is anything in dependency array or what
+  is in it. No dependency array means it will run
+  everytime there is a re-render (state is changed)
+  which is not ideal*/
+  /*useEffect(() => {
+    console.log("hello")
+  })*/
+
+  /*2. Add empty dependency array, console log statement
+  only applies once at start*/
+  /*useEffect(() => {
+    console.log("hello, again!")
+  }, [])*/
+
+  /*3. Adding a specific state value means the
+  initial run + only when that state value is 
+  changed */
+  useEffect(() => {
+    console.log("hello, times three!")
+  }, [personType])
 
   const reactions = {
     morning: "Awesome! ☀️",
