@@ -4,6 +4,13 @@ import { useState, useEffect } from "react";
 const App = () => {
   const [name, setName] = useState("friend");
   const [personType, setPersonType] = useState("lovely");
+
+  const reactions = {
+    morning: "Awesome! ☀️",
+    afternoon: "Fantastic! 😎",
+    evening: "Amazing! 🌙"
+  };
+
   /*1. First run of useEffect is guaranteed no matter
   if there is anything in dependency array or what
   is in it. No dependency array means it will run
@@ -25,15 +32,7 @@ const App = () => {
   useEffect(() => {
     console.log("hello, times three!")
   }, [personType])
-
-  const reactions = {
-    morning: "Awesome! ☀️",
-    afternoon: "Fantastic! 😎",
-    evening: "Amazing! 🌙"
-  };
-
-  // experiment with useEffect here!
-
+  
   return (
     <div className="App">
       <div className="form-element">
